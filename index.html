@@ -47,10 +47,23 @@
 
     <h1>coming soon</h1>
 
-    <audio autoplay>
+    <audio id="audioPlayer" autoplay>
         <source src="Pagina/rola2.mp3" type="audio/mp3">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
+
+    <script>
+        // Obtener el elemento de audio
+        var audioPlayer = document.getElementById("audioPlayer");
+
+        // Agregar un evento al terminar la reproducción para iniciar la siguiente canción
+        audioPlayer.addEventListener("ended", function () {
+            // Cambiar la fuente de audio a la segunda canción
+            audioPlayer.src = "Pagina/rola2.mp3";
+            // Reiniciar la reproducción
+            audioPlayer.play();
+        });
+    </script>
 
 </body>
 
