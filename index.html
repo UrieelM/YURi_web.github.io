@@ -42,26 +42,26 @@
 </style>
 
 <body>
-    <img id="cambiable" src="https://drive.google.com/uc?export=download&id=1k9ew6SIKDeBJS3tMosXEmfkMgQ8vVxss"
-        alt="YuriLogo" class="logo">
+    <img id="logo" src="https://drive.google.com/uc?export=download&id=1k9ew6SIKDeBJS3tMosXEmfkMgQ8vVxss" alt="YuriLogo"
+        class="logo">
 
     <h1>coming soon</h1>
 
-    <audio id="audioPlayer" autoplay>
+    <audio id="audioPlayer">
         <source src="Pagina/rola2.mp3" type="audio/mp3">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
 
     <script>
-        // Obtener el elemento de audio
-        var audioPlayer = document.getElementById("audioPlayer");
+        var imagen = document.getElementById('logo');
+        var audio = document.getElementById('audioPlayer');
 
-        // Agregar un evento al terminar la reproducción para iniciar la siguiente canción
-        audioPlayer.addEventListener("ended", function () {
-            // Cambiar la fuente de audio a la segunda canción
-            audioPlayer.src = "Pagina/rola2.mp3";
-            // Reiniciar la reproducción
-            audioPlayer.play();
+        imagen.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
         });
     </script>
 
